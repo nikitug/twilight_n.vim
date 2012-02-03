@@ -10,19 +10,21 @@ endif
 let colors_name = "twilight_n"
 
 let s:grey_blue = '#8a9597'
-let s:light_grey_blue = '#a0a8b0'
+let s:light_grey_blue = '#abb3ba'
 let s:dark_grey_blue = '#34383c'
 let s:mid_grey_blue = '#64686c'
 let s:beige = '#ceb67f'
 let s:light_orange = '#ebc471'
 let s:yellow = '#e3d796'
-let s:violet = '#a999ac'
+let s:violet = '#bcaabf'
 let s:green = '#a2a96f'
 let s:lightgreen = '#c2c98f'
-let s:red = '#d08356'
+let s:red = '#e39466'
 let s:cyan = '#74dad9'
-let s:darkgrey = '#222222'
+let s:darkgrey = '#1c1c1c'
+let s:black = '#000000'
 let s:grey = '#303030'
+let s:darkergrey = '#252525'
 let s:lightgrey = '#605958'
 let s:white = '#fffedc'
 
@@ -49,13 +51,14 @@ endif
 
 hi Visual guibg=#404040
 
-hi Cursor guifg=NONE guibg=#586068
-"hi Cursor guibg=#b0d0f0
+hi Cursor guifg=#ffffff guibg=#586068
 
 exe 'hi Normal         guifg='.s:white             .' guibg='.s:darkgrey
 exe 'hi Underlined     guifg='.s:white             .' guibg='.s:darkgrey        .' gui=underline'
-exe 'hi NonText        guifg='.s:lightgrey         .' guibg='.s:grey
-exe 'hi SpecialKey     guifg='.s:grey              .' guibg='.s:darkgrey
+exe 'hi NonText        guifg='.s:lightgrey         .' guibg='.s:darkergrey
+"
+"Tabs, trailing spaces, etc (lcs)
+exe 'hi SpecialKey     guifg='.s:mid_grey_blue     .' guibg='.s:darkgrey
 
 exe 'hi LineNr         guifg='.s:mid_grey_blue     .' guibg='.s:dark_grey_blue  .' gui=none'
 exe 'hi StatusLine     guifg='.s:white             .' guibg='.s:grey            .' gui=italic,underline'
@@ -69,7 +72,7 @@ exe 'hi SignColumn     guifg='.s:grey_blue         .' guibg='.s:dark_grey_blue  
 exe 'hi Comment        guifg='.s:mid_grey_blue     .' guibg='.s:darkgrey        .' gui=italic'
 exe 'hi TODO           guifg='.s:grey_blue         .' guibg='.s:darkgrey        .' gui=italic,bold'
 
-exe 'hi Title          guifg='.s:red               .' guibg='.s:darkgrey        .' gui=underline'
+exe 'hi Title          guifg='.s:red               .' guibg='.s:darkgrey        .' gui=none'
 
 exe 'hi String         guifg='.s:green             .' guibg='.s:darkgrey        .' gui=none'
 exe 'hi Special        guifg='.s:lightgreen        .' guibg='.s:darkgrey        .' gui=none'
@@ -107,43 +110,22 @@ exe 'hi PreProc        guifg='.s:grey_blue         .' guibg='.s:darkgrey        
 exe 'hi Operator       guifg='.s:light_orange      .' guibg='.s:darkgrey        .' gui=none'
 exe 'hi Type           guifg='.s:yellow            .' guibg='.s:darkgrey        .' gui=italic'
 
-"hi Identifier guifg=#7587a6
-" Type d: 'class'
-"hi Structure guifg=#9B859D gui=underline
-"hi Function guifg=#dad085
-" dylan: method, library, ... d: if, return, ...
-"hi Statement guifg=#7187a1 gui=NONE
-" Keywords  d: import, module...
-"hi PreProc guifg=#8fbfdc
-"gui=underline
-"hi Operator guifg=#a07020
-"hi Repeat guifg=#906040 gui=underline
-"hi Type guifg=#708090
-
-"hi Type guifg=#f9ee98 gui=NONE
-
-"hi NonText guifg=#808080 guibg=#303030
-
-"hi Macro guifg=#a0b0c0 gui=underline
-
-"Tabs, trailing spaces, etc (lcs)
-"hi SpecialKey guifg=#808080 guibg=#343434
-
-"hi TooLong guibg=#ff0000 guifg=#f8f8f8
-
-hi Search                    guifg=#606000         guibg=#c0c000         gui=bold
-
-hi Directory                 guifg=#dad085                               gui=NONE
-hi Error                     guibg=#602020
-
-hi DiffAdd                   guifg=#E6E1DC         guibg=#144212
-hi DiffDelete                guifg=#E6E1DC         guibg=#660000
+exe 'hi Search         guifg='.s:black             .' guibg='.s:yellow          .' gui=none'
 
 hi link htmlTag              xmlTag
 hi link htmlTagName          xmlTagName
 hi link htmlEndTag           xmlEndTag
 
-hi xmlTag                    guifg=#E8BF6A
-hi xmlTagName                guifg=#E8BF6A
-hi xmlEndTag                 guifg=#E8BF6A
+exe 'hi xmlTag         guifg='.s:yellow            .' guibg='.s:darkgrey        .' gui=none'
+exe 'hi xmlTagName     guifg='.s:light_grey_blue   .' guibg='.s:darkgrey        .' gui=none'
+exe 'hi xmlEndTag      guifg='.s:grey_blue         .' guibg='.s:darkgrey        .' gui=none'
+
+hi Directory           guifg=#dad085                                               gui=NONE
+hi Error               guibg=#602020
+
+hi DiffAdd             guifg=#E6E1DC                  guibg=#144212
+hi DiffDelete          guifg=#E6E1DC                  guibg=#660000
+
+"hi Macro guifg=#a0b0c0 gui=underline
+"hi TooLong guibg=#ff0000 guifg=#f8f8f8
 
