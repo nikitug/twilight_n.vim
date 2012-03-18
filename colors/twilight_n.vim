@@ -32,6 +32,7 @@ if version >= 700
   hi CursorLine guibg=#262626
   hi CursorColumn guibg=#262626
   hi MatchParen guifg=white guibg=#80a090 gui=bold
+  hi ColorColumn guibg=#191919
 
   "Tabpages
   hi TabLine guifg=#a09998 guibg=#202020 gui=underline
